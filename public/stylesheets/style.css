@@ -180,4 +180,12 @@ select {
     justify-content: space-between;
     align-items: center;
 }
+
+.attribution {
+    color: white;
+}
+
+.attribution:hover {
+    color:#e12bd2
+}
   

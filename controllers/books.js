@@ -4,10 +4,13 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 
-//index route
-router.get('/', (req, res) => {
+//index route for landing page
+router.get('/', async (req, res) => {
     try {
-      res.render('books/index.ejs');
+      const currentUser = await User.findById(req.session.user._id);
+      res.render('books/index.ejs', {
+        books: currentUser.books,
+      });
     } catch (error) {
       console.log(error)
       res.redirect('/');
@@ -17,6 +20,21 @@ router.get('/', (req, res) => {
 //new route
 router.get('/new', async (req, res) => {
   res.render('books/new.ejs');
+});
+
+//show route
+router.get('/:bookId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const book = currentUser.books.id(req.params.bookId);
+    
+    res.render('books/show.ejs', {
+      book:  book,
+    });
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
 });
 
 

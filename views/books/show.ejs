@@ -3,25 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/stylesheets/style.css" /> 
+  <link rel="stylesheet" href="/stylesheets/show.css" />
   <title><%= book.title %></title>
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1><%= book.title %> by <%= book.author %></h1>
-  <% if (book.notes) { %>
-    <p>Notes: <%= book.notes %></p>
-  <% } %>
-  <% if (book.finishedReading) { %>
-    <p>You've finished reading this book!</p>
-  <% } else { %>
+  <div class="show-body">
+    <div class="show-header">
+        <h1><%= book.title %> by <%= book.author %></h1>
+    </div>
+    
+     <% if (book.notes) { %>
+        <div class="show-notes">
+       <p>Notes: <%= book.notes %></p>
+       </div>
+        <% } %>
+    
+       <div class="show-reading">
+              <% if (book.finishedReading) { %>
+        <p>You've finished reading this book!</p>
+     <% } else { %>
     <p>You still have to finish reading this book!</p>
   <% } %>
+     </div>
+
+     <div class="show-recommend">
+
   <% if (book.recommend) { %>
     <p>You recommend this book!</p>
   <% } else { %>
     <p>You do not recommend this book!</p>
   <% } %>
+  </div>
+
+  <div class="show-sidebar">
+    <div class="show-actions">
 
   <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">
     Edit this book
@@ -32,6 +48,9 @@
   method="POST"
 >
   <button type="submit">Delete this book</button>
+</div>
+</div>
+</div>
 </form>
   
 </body>

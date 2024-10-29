@@ -38,8 +38,7 @@ body {
     height: 100%;
   }
 
-  /* public/stylesheets/style.css */
-
+  
 .signin-container,
 .signup-container {
   display: flex;
@@ -139,5 +138,4 @@ ul {
     background-color: #0a268d;
     color: white;
   }
-  
   

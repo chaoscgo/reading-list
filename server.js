@@ -14,7 +14,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 
 const authController = require('./controllers/auth.js');
-const booksController = require('./controllers/applications.js');
+const booksController = require('./controllers/books.js');
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -41,10 +41,15 @@ app.use(
 
 app.use(passUserToView);
 
+//Index route
 app.get('/', (req, res) => {
-    res.render('index.ejs', {
+    if (req.session.user) {
+      res.redirect(`/users/${req.session.user._id}/books`);
+    } else {
+      res.render('index.ejs', {
       user: req.session.user,
     });
+    }
 });
 
 app.use('/auth', authController);

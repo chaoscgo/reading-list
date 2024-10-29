@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= book.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= book.title %> by <%= book.author %></h1>
+  <% if (book.notes) { %>
+    <p>Notes: <%= book.notes %></p>
+  <% } %>
+  <% if (book.finishedReading) { %>
+    <p>You've finished reading this book!</p>
+  <% } else { %>
+    <p>You still have to finish reading this book!</p>
+  <% } %>
+  <% if (book.recommend) { %>
+    <p>You recommend this book!</p>
+  <% } else { %>
+    <p>You do not recommend this book!</p>
+  <% } %>
+  
+</body>
+</html>

@@ -26,13 +26,14 @@ router.get('/new', async (req, res) => {
 router.get('/:bookId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
+  
     const book = currentUser.books.id(req.params.bookId);
-    
+  
     res.render('books/show.ejs', {
-      book:  book,
+      book: book,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.redirect('/')
   }
 });

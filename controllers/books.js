@@ -3,8 +3,6 @@ const router = express.Router();
 
 const User = require('../models/user.js');
 
-
-//index route for landing page
 router.get('/', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
@@ -17,16 +15,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-//new route
 router.get('/new', async (req, res) => {
   res.render('books/new.ejs');
 });
 
-//show route
 router.get('/:bookId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-  
     const book = currentUser.books.id(req.params.bookId);
   
     res.render('books/show.ejs', {
@@ -42,6 +37,7 @@ router.get('/:bookId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const book = currentUser.books.id(req.params.bookId);
+    
     res.render('books/edit.ejs', {
       book: book,
     });
@@ -51,7 +47,6 @@ router.get('/:bookId/edit', async (req, res) => {
   }
 });
 
-//create route
 router.post('/', async (req, res) => {
   try {
 
@@ -74,13 +69,11 @@ router.post('/', async (req, res) => {
  
     res.redirect(`/users/${currentUser._id}/books`);
   } catch (error) {
- 
     console.log(error);
     res.redirect('/')
   }
 });
 
-//update route
 router.put('/:bookId', async (req, res) => {
   try {
     if (req.body.finishedReading === 'on') {
@@ -88,6 +81,7 @@ router.put('/:bookId', async (req, res) => {
     } else {
       req.body.finishedReading = false;
     }
+
     if (req.body.recommend === 'on') {
       req.body.recommend = true;
     } else {
@@ -96,13 +90,12 @@ router.put('/:bookId', async (req, res) => {
   
     const currentUser = await User.findById(req.session.user._id);
     const book = currentUser.books.id(req.params.bookId);
+    
     book.set(req.body);
     
     await currentUser.save();
     
-    res.redirect(
-      `/users/${currentUser._id}/books/${req.params.bookId}`
-    );
+    res.redirect(`/users/${currentUser._id}/books/${req.params.bookId}`);
   } catch (error) {
     console.log(error);
     res.redirect('/')
@@ -110,7 +103,6 @@ router.put('/:bookId', async (req, res) => {
 });
 
 
-//delete route
 router.delete('/:bookId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);

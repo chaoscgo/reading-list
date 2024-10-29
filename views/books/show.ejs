@@ -10,48 +10,43 @@
   <%- include('../partials/_navbar.ejs') %>
   <div class="show-body">
     <div class="show-header">
-        <h1><%= book.title %> by <%= book.author %></h1>
+      <h1><%= book.title %> by <%= book.author %></h1>
     </div>
     
-     <% if (book.notes) { %>
-        <div class="show-notes">
-       <p>Notes: <%= book.notes %></p>
+    <% if (book.notes) { %>
+       <div class="show-notes">
+         <p>Notes: <%= book.notes %></p>
        </div>
-        <% } %>
+    <% } %>
     
-       <div class="show-reading">
-              <% if (book.finishedReading) { %>
-        <p>You've finished reading this book!</p>
-     <% } else { %>
-    <p>You still have to finish reading this book!</p>
-  <% } %>
-     </div>
+    <div class="show-reading">
+       <% if (book.finishedReading) { %>
+         <p>You've finished reading this book!</p>
+       <% } else { %>
+         <p>You still have to finish reading this book!</p>
+       <% } %>
+    </div>
 
-     <div class="show-recommend">
+    <div class="show-recommend">
+       <% if (book.recommend) { %>
+         <p>You recommend this book!</p>
+       <% } else { %>
+         <p>You do not recommend this book!</p>
+       <% } %>
+    </div>
 
-  <% if (book.recommend) { %>
-    <p>You recommend this book!</p>
-  <% } else { %>
-    <p>You do not recommend this book!</p>
-  <% } %>
-  </div>
-
-  <div class="show-sidebar">
+    <div class="show-sidebar">
     <div class="show-actions">
+      <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this book</a>
 
-  <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">
-    Edit this book
-  </a>
+      <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
+       method="POST">
 
-  <form
-  action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
-  method="POST"
->
-  <button type="submit">Delete this book</button>
-</div>
-</div>
-</div>
-</form>
-  
+      <button type="submit">Delete this book</button>
+      </form>
+      
+    </div>
+    </div>
+  </div>
 </body>
 </html>

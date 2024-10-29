@@ -12,7 +12,6 @@ const MongoStore = require('connect-mongo');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
-
 const authController = require('./controllers/auth.js');
 const booksController = require('./controllers/books.js');
 
@@ -30,7 +29,6 @@ app.use(methodOverride("_method"));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(
     session({
       secret: process.env.SESSION_SECRET,
@@ -40,18 +38,17 @@ app.use(
         mongoUrl: process.env.MONGODB_URI,
       }),
     })
-  );
+);
 
 app.use(passUserToView);
 
-//Index route
 app.get('/', (req, res) => {
     if (req.session.user) {
       res.redirect(`/users/${req.session.user._id}/books`);
     } else {
       res.render('index.ejs', {
       user: req.session.user,
-    });
+      });
     }
 });
 

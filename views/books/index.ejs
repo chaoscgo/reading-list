@@ -8,20 +8,21 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+
   <div class="all-books-body">
     <div class="all-books-header">
-  <h1>Your Books</h1>
-  <a class="add-book-link" href="/users/<%=user._id%>/books/new">Add a Book</a>
-  </div>
-  <ul>
-    <% books.forEach((book)=>{ %>
-      <li>
-        <a href="/users/<%= user._id %>/books/<%= book._id %>">
-          <%= book.title %> by <%= book.author %>
-        </a>
-      </li>
-    <% }) %>
-  </ul>
+      <h1>Your Books</h1>
+      <a class="add-book-link" href="/users/<%=user._id%>/books/new">Add a Book</a>
+    </div>
+    <ul>
+      <% books.forEach((book)=>{ %>
+        <li>
+          <a class = "book-list" href="/users/<%= user._id %>/books/<%= book._id %>">
+            <%= book.title %> by <%= book.author %>
+          </a>
+        </li>
+     <% }) %>
+   </ul>
   </div>
 </body>
 </html>

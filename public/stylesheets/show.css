@@ -7,7 +7,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #e0bbf0;
-  }
+}
    
 .show-body {
   display: flex;
@@ -53,11 +53,11 @@ button {
 }
    
 button:hover {
-  background-color: #e84a6c;
+  background-color: #960a28;
 }
    
 .show-actions > a {
-  background-color: #4b598e;
+  background-color: #384b8f;
   color: white;
   text-decoration: none;
   font-size: 1.1em;
@@ -70,7 +70,7 @@ button:hover {
 }
    
 .show-actions > a:hover {
-  background-color: #da25a1;
+  background-color: #910d67;
 }
    
 p {
@@ -95,7 +95,7 @@ p {
 }
    
 .show-notes-container > a:hover {
-  color: #4b598e;
+  color: #41518c;
 }
    
 .show-notes, .show-reading, .show-recommend {

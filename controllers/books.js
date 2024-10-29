@@ -80,6 +80,37 @@ router.post('/', async (req, res) => {
   }
 });
 
+//update route
+router.put('/:bookId', async (req, res) => {
+  try {
+    if (req.body.finishedReading === 'on') {
+      req.body.finishedReading = true;
+    } else {
+      req.body.finishedReading = false;
+    }
+    if (req.body.recommend === 'on') {
+      req.body.recommend = true;
+    } else {
+      req.body.recommend = false;
+    }
+  
+    const currentUser = await User.findById(req.session.user._id);
+    const book = currentUser.books.id(req.params.bookId);
+    book.set(req.body);
+    
+    await currentUser.save();
+    
+    res.redirect(
+      `/users/${currentUser._id}/books/${req.params.bookId}`
+    );
+  } catch (error) {
+    console.log(error);
+    res.redirect('/')
+  }
+});
+
+
+//delete route
 router.delete('/:bookId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);

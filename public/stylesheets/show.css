@@ -107,9 +107,9 @@ p {
 }
    
 .show-notes > p {
-    color: #140881;
+    color: #0a076c;
     font-weight: bold;
     font-size: 1.4em;
     margin: 10px 30px;
-    text-align: left;
+    text-align: center;
 }

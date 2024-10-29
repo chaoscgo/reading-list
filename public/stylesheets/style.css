@@ -181,6 +181,10 @@ select {
     align-items: center;
 }
 
+footer {
+    margin-bottom: 50px;
+}
+
 .attribution {
     color: white;
 }

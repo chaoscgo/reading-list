@@ -68,5 +68,18 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:bookId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.books.id(req.params.bookId).deleteOne();
+    await currentUser.save();
+  
+    res.redirect(`/users/${currentUser._id}/books`);
+ 
+  } catch (error) {
+    console.log(error);
+    res.redirect('/')
+  }
+});
 
 module.exports = router;

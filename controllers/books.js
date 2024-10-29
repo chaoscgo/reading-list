@@ -38,6 +38,18 @@ router.get('/:bookId', async (req, res) => {
   }
 });
 
+router.get('/:bookId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const book = currentUser.books.id(req.params.bookId);
+    res.render('books/edit.ejs', {
+      book: book,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/')
+  }
+});
 
 //create route
 router.post('/', async (req, res) => {

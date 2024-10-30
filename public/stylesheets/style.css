@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #a354c6;
+    background-color: #cb89e8;
 }
 
 .index-body {
@@ -92,6 +92,10 @@ button {
 .book-list {
     color: white;
 }
+
+.book-list:hover {
+    color: rgb(240,20,145);
+}
     
 .all-books-header {
     display: flex;
@@ -100,6 +104,10 @@ button {
     align-items: center;
     padding: 10px 20px;
     width: 90%;
+}
+
+.all-books-header > h1 {
+    color:#0a268d;
 }
      
 .add-book-link {

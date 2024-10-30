@@ -70,6 +70,8 @@ I tested the application after each step and once I was sure everything was work
 
 I find it challenging to organize all the moving parts of a full stack CRUD application.  The more I do it, the easier it becomes, but it's definitely not second nature yet!  
 
+Also, styling with CSS is easier, but still challenging for me.  I feel like I could spend hours tweaking the styling.
+
 ## Wins
 
 I was happy that I was able to get all the routes in the right place and have everything work out without too much error handling.

@@ -13,12 +13,6 @@
       <h1><%= book.title %> by <%= book.author %></h1>
     </div>
     
-    <% if (book.notes) { %>
-       <div class="show-notes">
-         <p>Notes: <%= book.notes %></p>
-       </div>
-    <% } %>
-    
     <div class="show-reading">
        <% if (book.finishedReading) { %>
          <p>You've finished reading this book!</p>
@@ -34,6 +28,12 @@
          <p>You do not recommend this book!</p>
        <% } %>
     </div>
+
+    <% if (book.notes) { %>
+      <div class="show-notes">
+        <p>Notes: <%= book.notes %></p>
+      </div>
+    <% } %>
 
     <div class="show-sidebar">
     <div class="show-actions">

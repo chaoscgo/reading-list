@@ -12,18 +12,18 @@ body {
 .show-body {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 90%;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
    
 .show-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  font-size: 60%
+  align-items: left;
+  width: 80%;
+  font-size: 50%
 }
    
 .show-header > h1 {
@@ -36,20 +36,20 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   margin: 20px 0 0 30px;
 }
    
 button {
-  padding: 8px 10px;
+  padding: 8px 20px;
   background-color: #9b0696;
   color: white;
   border-radius: 30px;
   border: none;
   font-size: 1.1em;
   width: 10em;
-  margin: 5px;
+  margin: 5px 30px;
 }
    
 button:hover {
@@ -86,21 +86,9 @@ p {
   margin: 20px 0;
 }
    
-.show-notes-container > a {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-size: 1.4em;
-  margin: 20px;
-}
-   
-.show-notes-container > a:hover {
-  color: #41518c;
-}
-   
 .show-notes, .show-reading, .show-recommend {
   background-color: #f6e7e7;
-  width: 85%;
+  width: 50%;
   border-radius: 20px;
   padding: 40px 40px 20px 40px;
   margin: 20px 10px;

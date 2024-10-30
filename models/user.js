@@ -6,6 +6,7 @@ const bookSchema = new mongoose.Schema({
     finishedReading: {type: Boolean,},
     recommend: {type: Boolean},
     notes: {type: String,},
+    bookCoverUrl: {type: String,},
 });
 
 const userSchema = mongoose.Schema({

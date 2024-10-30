@@ -11,7 +11,7 @@ body {
    
 .show-body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 90%;
   justify-content: center;
   align-items: left;
@@ -82,16 +82,28 @@ p {
 }
    
 .show-notes-container {
-  width: 90%;
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
    
 .show-notes, .show-reading, .show-recommend {
   background-color: #f6e7e7;
-  width: 50%;
+  width: 70%;
   border-radius: 20px;
   padding: 40px 40px 20px 40px;
   margin: 20px 10px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+.show-book-cover {
+  display: flex;
+  flex-direction: right;
+  
 }
    
 .show-notes > p {

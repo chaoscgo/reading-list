@@ -44,7 +44,7 @@ You are able to manage your Reading List by adding new books, editing informatio
 
 ## Deployment Link
 
-
+https://reading-list-app-6bcea523d230.herokuapp.com/
 
 ## Planning Materials
 

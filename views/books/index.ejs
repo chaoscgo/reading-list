@@ -14,15 +14,23 @@
       <h1>Your Books</h1>
       <a class="add-book-link" href="/users/<%=user._id%>/books/new">Add a Book</a>
     </div>
-    <ul>
-      <% books.forEach((book)=>{ %>
-        <li>
-          <a class = "book-list" href="/users/<%= user._id %>/books/<%= book._id %>">
-            <%= book.title %> by <%= book.author %>
-          </a>
-        </li>
-     <% }) %>
-   </ul>
+    <div class="body-container">
+      <div class="book-inventory">
+        <ul>
+        <% books.forEach((book)=>{ %>
+          <li>
+           <a class = "book-list" href="/users/<%= user._id %>/books/<%= book._id %>">
+           <%= book.title %> by <%= book.author %>
+           </a>
+         </li>
+        <% }) %>
+        </ul>
+      </div>
+      <div class="book-rose-image">
+       <img class="book-rose" src="https://img.freepik.com/free-photo/top-view-light-pink-rose-open-book-gray-surface_141793-18269.jpg?uid=R171112977&ga=GA1.1.330136585.1730218639&semt=ais_siglip" alt text = "open book with rose">
+       <p style="font-size:10px;">Image designed by <a class="attribution" href="https://www.freepik.com">Freepik</a></p>
+      </div>
+    </div>
   </div>
 </body>
 </html>

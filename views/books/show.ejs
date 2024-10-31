@@ -8,13 +8,13 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-    <div class="show-header">
-      <h1><%= book.title %> by <%= book.author %></h1>
-    </div>
+  <div class="show-header">
+    <h1><%= book.title %> by <%= book.author %></h1>
+  </div>
 
-    <div class="show-body">
+  <div class="show-body">
     
-    <div class="show-notes-container">
+  <div class="show-notes-container">
     <div class="show-reading">
        <% if (book.finishedReading) { %>
          <p>You've finished reading this book!</p>
@@ -39,27 +39,25 @@
     </div>
 
     <div class="image-container">
-    <% if (book.bookCoverUrl) { %>
-      <div class="show-book-cover">
-        <img src="<%= book.bookCoverUrl %>" alt="Book Cover image" width="300" height="500">
-      </div>
-    <% } %>
+      <% if (book.bookCoverUrl) { %>
+        <div class="show-book-cover">
+         <img src="<%= book.bookCoverUrl %>" alt="Book Cover image" width="300" height="500">
+        </div>
+      <% } %>
     </div>
-    </div>
-    
-   
+  </div>
 
-    <div class="show-sidebar">
-    <div class="show-actions">
-      <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this book</a>
+  <div class="show-sidebar">
+  <div class="show-actions">
+    <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this book</a>
 
-      <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
-       method="POST">
+    <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE"
+     method="POST">
 
-      <button type="submit">Delete this book</button>
-      </form>
+    <button type="submit">Delete this book</button>
+    </form>
       
-    </div>
-    </div>
+  </div>
+  </div>
 </body>
 </html>

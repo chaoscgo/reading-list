@@ -100,7 +100,7 @@ button {
 .all-books-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     padding: 10px 20px;
     width: 90%;
@@ -108,10 +108,10 @@ button {
 
 .all-books-header > h1 {
     color:#0a268d;
+    padding: 0px 650px 0px 0px;
 }
      
 .add-book-link {
-    padding: 10px;
     background-color: #61509b;
     color: white;
     border-radius: 30px;
@@ -190,7 +190,7 @@ select {
 }
 
 footer {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .attribution {
@@ -200,4 +200,34 @@ footer {
 .attribution:hover {
     color:#e12bd2
 }
-  
+
+img {
+    float: right;
+    width: 100px;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: left;
+    align-items: left;
+}
+
+.book-inventory {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    width: 30%;
+}
+
+.book-rose-image {
+    align-items: right;
+    width: 30%;
+    height: 35vh;
+}
+
+.book-rose {
+    height: 100%;
+    width: 100%;
+}

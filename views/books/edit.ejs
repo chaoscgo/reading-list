@@ -6,34 +6,37 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Editing <%= book.title %></title>
 </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit <%= book.title %> by <%= book.author %></h1>
-    <div class="edit-body">
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= book.title %> by <%= book.author %></h1>
+  <div class="edit-body">
 
-      <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<%= book.title %>">
+    <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" value="<%= book.title %>">
 
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" value="<%= book.author %>">
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" value="<%= book.author %>">
 
-        <div class="check-read">
+      <div class="check-read">
         <label for="finishedReading">Finished Reading?</label>
         <input type="checkbox" name="finishedReading" id="finishedReading" <% if (book.finishedReading) { %>checked<% } %>>
-        </div>
+      </div>
 
-        <div class="check-recommend">
+      <div class="check-recommend">
         <label for="recommend">Recommend?</label>
         <input type="checkbox" name="recommend" id="recommend" <% if (book.recommend) { %>checked<% } %>>
-        </div>
+      </div>
 
-        <label for="notes">Notes:</label>
-        <textarea name="notes" id="notes"><%= book.notes %></textarea>
+      <label for="notes">Notes:</label>
+      <textarea name="notes" id="notes"><%= book.notes %></textarea>
 
-        <button type="submit">Update Book</button>
-      </form>
+      <label for="bookCoverUrl">Book Cover URL:</label>
+      <input type="text" name="bookCoverUrl" id="bookCoverUrl" value="<%= book.bookCoverUrl %>"/>
+
+      <button type="submit">Update Book</button>
+    </form>
       
-    </div>
-  </body>
+  </div>
+</body>
 </html>

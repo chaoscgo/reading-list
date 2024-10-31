@@ -64,7 +64,7 @@ I then built a landing page using ejs and built the route in server.js.  I added
 
 I built the books controller to handle the rest of the routes.  I then proceeded to build the pages and the routes for the rest of the pages (index, new, create, show, delete, edit and update).  I built a partial nav bar to be used on all pages.  I added the books data to the index page so that the user could see all of their books listed there.
 
-I tested the application after each step and once I was sure everything was working correctly, I styled the app with CSS.
+I tested the application after each step and once I was sure everything was working correctly, I styled the app with CSS and added the ability for the user to enter a URL of a book cover image.
 
 ## Challenges
 
@@ -78,17 +78,21 @@ I was happy that I was able to get all the routes in the right place and have ev
 
 I did implement session storage in MongoDB so that I wouldn't have to keep signing in each time I changed something.
 
+I really like the fact that the user has the option to enter a URL to display the book cover on the show page.
+
+![Screenshot of show page](./wsl.localhost_Ubuntu_home_chaoscgo_code_ga_projects_reading-list_Show-Page-screenshot.png)
+
 ## Key Learnings/Takeaways
 
 I have learned that even though it seems like a project this big and encompassing is impossible, breaking it into small steps and testing each step along the way makes it much less stressful.  I do feel like it's starting to come together a little more.
 
-I also am excited about being introduced to Trello.  I love staying organized, and Trello is very intuitive.
+I'm also getting more comfortable with CSS and Flexbox.
 
-## Bugs
+I am excited about being introduced to Trello.  I love staying organized, and Trello is very intuitive.
 
 ## Attributions
 
-The background image was provided by [FreePic](https://www.freepik.com).
+The background image and image on the index page were provided by [FreePic](https://www.freepik.com).
 
 ## Technologies used:
 

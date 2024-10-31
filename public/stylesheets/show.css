@@ -103,7 +103,6 @@ p {
 .show-book-cover {
   display: flex;
   flex-direction: right;
-  
 }
    
 .show-notes > p {
